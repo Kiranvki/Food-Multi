@@ -54,13 +54,7 @@ function SideDrawer() {
               fontSize: { lg: "20px", sm: "16px" },
             }}
           >
-            Pizza
-            <Typography
-              color={"#f4474a"}
-              sx={{ fontSize: { lg: "24px", sm: "20px" } }}
-            >
-              World
-            </Typography>
+            Coolway
           </Typography>
         </Box>
         <Divider variant="middle" color="grey" sx={{ my: 2 }} />

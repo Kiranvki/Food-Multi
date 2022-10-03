@@ -54,6 +54,8 @@ function Appbar(props) {
   const [isLogged, setIsLogged] = context.authApi.isLogged;
   const [isAdmin, setIsAdmin] = context.authApi.isAdmin;
   const [isUser, setIsUser] = context.authApi.isUser;
+  const [isHotel, setIsHotel] = context.authApi.isHotel;
+  const [isMart, setIsMart] = context.authApi.isMart;
   const [cart] = context.authApi.cart;
 
   // navbar scrool
@@ -178,7 +180,94 @@ function Appbar(props) {
                 />
               </SpeedDial>
             </Box>
-          ) : (
+          ) : null}
+          {isMart ? (
+            <Box sx={{ transform: "translateY(90px)", flexGrow: 1 }}>
+              <SpeedDial
+                direction={direction}
+                ariaLabel="SpeedDial basic example"
+                icon={
+                  <Avatar
+                    sx={{
+                      width: "100%",
+                      height: "100%",
+                      backgroundColor: "#fff",
+                    }}
+                    src={user.image.url}
+                  />
+                }
+              >
+                <SpeedDialAction
+                  sx={{
+                    background: `linear-gradient(to right, #f12711, #f5af19)`,
+                  }}
+                  onClick={profileNavigate}
+                  tooltipTitle="Profile"
+                  icon={<PersonIcon sx={{ color: "#fff" }} />}
+                />
+                <SpeedDialAction
+                  sx={{
+                    background: `linear-gradient(to right, #f12711, #f5af19)`,
+                  }}
+                  onClick={orderNavigate}
+                  tooltipTitle="Orders"
+                  icon={<ListAltIcon sx={{ color: "#fff" }} />}
+                />
+                <SpeedDialAction
+                  sx={{
+                    background: `linear-gradient(to right, #f12711, #f5af19)`,
+                  }}
+                  onClick={logoutUser}
+                  icon={<LogoutIcon sx={{ color: "#fff" }} />}
+                  tooltipTitle="Logout"
+                />
+              </SpeedDial>
+            </Box>
+          ) : null}
+          {isHotel ? (
+            <Box sx={{ transform: "translateY(90px)", flexGrow: 1 }}>
+              <SpeedDial
+                direction={direction}
+                ariaLabel="SpeedDial basic example"
+                icon={
+                  <Avatar
+                    sx={{
+                      width: "100%",
+                      height: "100%",
+                      backgroundColor: "#fff",
+                    }}
+                    src={user.image.url}
+                  />
+                }
+              >
+                <SpeedDialAction
+                  sx={{
+                    background: `linear-gradient(to right, #f12711, #f5af19)`,
+                  }}
+                  onClick={profileNavigate}
+                  tooltipTitle="Profile"
+                  icon={<PersonIcon sx={{ color: "#fff" }} />}
+                />
+                <SpeedDialAction
+                  sx={{
+                    background: `linear-gradient(to right, #f12711, #f5af19)`,
+                  }}
+                  onClick={orderNavigate}
+                  tooltipTitle="Orders"
+                  icon={<ListAltIcon sx={{ color: "#fff" }} />}
+                />
+                <SpeedDialAction
+                  sx={{
+                    background: `linear-gradient(to right, #f12711, #f5af19)`,
+                  }}
+                  onClick={logoutUser}
+                  icon={<LogoutIcon sx={{ color: "#fff" }} />}
+                  tooltipTitle="Logout"
+                />
+              </SpeedDial>
+            </Box>
+          ) : null}
+          {isAdmin ? (
             <Box sx={{ transform: "translateY(63px)", flexGrow: 1 }}>
               <SpeedDial
                 icon={
@@ -208,7 +297,7 @@ function Appbar(props) {
                 />
               </SpeedDial>
             </Box>
-          )}
+          ) : null}
         </Box>
       </Box>
     );
@@ -244,9 +333,13 @@ function Appbar(props) {
             >
               <MenuIcon style={{ color: "#fff" }} />
             </IconMenu>
-            <NavLink to={`/`} style={{ textDecoration: "none", flexGrow: 1 }}>
-              <Stack direction={"row"}>
-                {isAdmin ? (
+
+            <Box sx={{ flexGrow: 1 }}>
+              {isAdmin ? (
+                <NavLink
+                  to={`/home`}
+                  style={{ textDecoration: "none", flexGrow: 1 }}
+                >
                   <LogoContent
                     variant="h5"
                     component="div"
@@ -260,39 +353,99 @@ function Appbar(props) {
                   >
                     Admin
                   </LogoContent>
-                ) : (
+                </NavLink>
+              ) : null}
+              {isUser ? (
+                <NavLink
+                  to={`/home`}
+                  style={{ textDecoration: "none", flexGrow: 1 }}
+                >
                   <Box sx={{ display: "flex" }}>
                     <Logo>
                       <img
-                        src="https://res.cloudinary.com/dhina/image/upload/v1662388585/ProjectImage/13-pizza-lineal_dy3pj6.gif"
+                        src="https://res.cloudinary.com/dhina/image/upload/v1664773762/waycool/526-paper-bag-vegetables-flat_rcghbe.gif"
                         alt=""
-                        height={55}
+                        height={50}
                       />
                     </Logo>
                     <LogoContent
                       variant="h6"
                       component="div"
+                      color={"#f4474a"}
                       sx={{
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
-                        fontWeight: 500,
-                        color: "#fff",
+                        fontWeight: 600,
                         fontSize: "20px",
                       }}
                     >
-                      Pizza
-                      <LogoContentTwo
-                        color={"#f4474a"}
-                        sx={{ fontSize: "24px" }}
-                      >
-                        World
-                      </LogoContentTwo>
+                      Coolway
                     </LogoContent>
                   </Box>
-                )}
-              </Stack>
-            </NavLink>
+                </NavLink>
+              ) : null}
+              {isHotel ? (
+                <NavLink
+                  to={`/restaurent`}
+                  style={{ textDecoration: "none", flexGrow: 1 }}
+                >
+                  <Box sx={{ display: "flex" }}>
+                    <Logo>
+                      <img
+                        src="https://res.cloudinary.com/dhina/image/upload/v1664773762/waycool/526-paper-bag-vegetables-flat_rcghbe.gif"
+                        alt=""
+                        height={50}
+                      />
+                    </Logo>
+                    <LogoContent
+                      variant="h6"
+                      component="div"
+                      color={"#f4474a"}
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        fontWeight: 600,
+                        fontSize: "20px",
+                      }}
+                    >
+                      Coolway
+                    </LogoContent>
+                  </Box>
+                </NavLink>
+              ) : null}
+              {isMart ? (
+                <NavLink
+                  to={`/superMart`}
+                  style={{ textDecoration: "none", flexGrow: 1 }}
+                >
+                  <Box sx={{ display: "flex" }}>
+                    <Logo>
+                      <img
+                        src="https://res.cloudinary.com/dhina/image/upload/v1664773762/waycool/526-paper-bag-vegetables-flat_rcghbe.gif"
+                        alt=""
+                        height={50}
+                      />
+                    </Logo>
+                    <LogoContent
+                      variant="h6"
+                      component="div"
+                      color={"#f4474a"}
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        fontWeight: 600,
+                        fontSize: "20px",
+                      }}
+                    >
+                      Coolway
+                    </LogoContent>
+                  </Box>
+                </NavLink>
+              ) : null}
+            </Box>
             {isLogged ? null : (
               <Box
                 sx={{ display: { xs: "block", md: "none", marginRight: 4 } }}
@@ -322,7 +475,7 @@ function Appbar(props) {
               open={openDrawer}
             >
               <DrawerHeader>
-                <Typography sx={{ flexGrow: 1 }}>PizzaWorld</Typography>
+                <Typography sx={{ flexGrow: 1 }}>Coolway</Typography>
                 <IconButton onClick={handleDrawerClose}>
                   <CloseIcon />
                 </IconButton>
@@ -379,9 +532,33 @@ function Appbar(props) {
             </Drawer>
 
             <MyList sx={{ display: "flex", flexGrow: 1 }}>
-              <NavLink to={`/`} className="list">
-                <MyItem>Home</MyItem>
-              </NavLink>
+              {isLogged ? null : (
+                <NavLink to={`/restaurent`} className="list">
+                  <MyItem>Home</MyItem>
+                </NavLink>
+              )}
+
+              {isMart ? (
+                <NavLink to={`/superMart`} className="list">
+                  <MyItem>Home</MyItem>
+                </NavLink>
+              ) : null}
+
+              {isHotel ? (
+                <NavLink to={`/restaurent`} className="list">
+                  <MyItem>Home</MyItem>
+                </NavLink>
+              ) : null}
+              {isUser ? (
+                <NavLink to={`/`} className="list">
+                  <MyItem>Home</MyItem>
+                </NavLink>
+              ) : null}
+              {isAdmin ? (
+                <NavLink to={`/`} className="list">
+                  <MyItem>Home</MyItem>
+                </NavLink>
+              ) : null}
               {isAdmin ? null : (
                 <NavLink to={`/about`} className="list">
                   <MyItem>About us</MyItem>

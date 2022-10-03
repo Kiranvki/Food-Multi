@@ -7,7 +7,11 @@ import {
   Button,
   Card,
   Container,
+  FormControl,
   Grid,
+  InputLabel,
+  MenuItem,
+  Select,
   TextField,
   Typography,
 } from "@mui/material";
@@ -20,6 +24,7 @@ function Register() {
     email: "",
     mobile: "",
     password: "",
+    role: "",
   });
   const navigate = useNavigate();
 
@@ -133,6 +138,30 @@ function Register() {
                     {errors.password}
                   </Typography>
                 ) : null}
+                {/* DropDown Options for selecting user */}
+
+                <FormControl
+                  fullWidth
+                  sx={{ marginTop: 2, color: "red" }}
+                  required
+                  label="Product title"
+                  color="secondary"
+                >
+                  <InputLabel>What You are</InputLabel>
+                  <Select
+                    name="role"
+                    id="role"
+                    value={user.role}
+                    label="What you are"
+                    onChange={readValue}
+                  >
+                    <MenuItem value={"user"}>User</MenuItem>
+                    <MenuItem value={"supermarket"}>Supermarket</MenuItem>
+                    <MenuItem value={"hotel"}>Hotel</MenuItem>
+                  </Select>
+                </FormControl>
+
+                {/* DropDown Options for selecting user */}
                 <Button
                   variant="contained"
                   type="submit"

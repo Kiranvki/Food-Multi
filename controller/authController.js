@@ -8,7 +8,7 @@ const sendMail = require("../middleware/mail");
 const authController = {
   register: async (req, res) => {
     try {
-      const { name, email, mobile, password } = req.body;
+      const { name, email, mobile, password, role } = req.body;
 
       const passHash = await bcrypt.hash(password, 10);
 
@@ -16,6 +16,7 @@ const authController = {
         name,
         email,
         mobile,
+        role,
         password: passHash,
       });
 

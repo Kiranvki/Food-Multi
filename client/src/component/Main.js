@@ -27,6 +27,8 @@ import OrderList from "./Admin/OrderList";
 import UpdateProduct from "./Admin/UpdateProduct";
 import ProductList from "./Admin/ProductList";
 import UpdateProfile from "./screens/UpdateProfile.js";
+import Restaurant from "./screens/Restaurant";
+import SuperMarket from "./screens/SuperMart";
 
 function Main(props) {
   const context = useContext(GlobalContext);
@@ -34,6 +36,8 @@ function Main(props) {
   const [isLogged, setIsLogged] = context.authApi.isLogged;
   const [isAdmin, setIsAdmin] = context.authApi.isAdmin;
   const [isUser, setIsUser] = context.authApi.isUser;
+  const [isHotel, setIsHotel] = context.authApi.isHotel;
+  const [isMart, setIsMart] = context.authApi.isMart;
 
   return (
     <Router>
@@ -41,10 +45,27 @@ function Main(props) {
       <ToastContainer autoClose={1000} position="top-center" />
       <Routes>
         <Route path={`/`} element={<Home />} />
+        <Route path={`/home`} element={<Home />} />
         <Route path={`/about`} element={<About />} />
         <Route path={`/menu`} element={<Menu_Item />} />
         <Route path={`/login`} element={isLogged ? <Pnf /> : <Login />} />
         <Route path={`/register`} element={isLogged ? <Pnf /> : <Register />} />
+        <Route
+          path={`/restaurent`}
+          element={
+            <ProtectedRoute auth={isLogged}>
+              <Restaurant />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path={`/superMart`}
+          element={
+            <ProtectedRoute auth={isLogged}>
+              <SuperMarket />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path={`/admin/dashboard`}
           element={

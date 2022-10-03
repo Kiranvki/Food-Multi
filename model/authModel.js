@@ -27,6 +27,8 @@ const Auth = new mongoose.Schema(
     role: {
       type: String,
       default: "user",
+      enum: ["user", "hotel", "supermarket", "superadmin"],
+      required: true,
     },
     orders: {
       type: Array,

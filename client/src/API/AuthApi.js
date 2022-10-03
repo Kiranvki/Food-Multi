@@ -7,6 +7,8 @@ function useAuth(token) {
   const [isLogged, setIsLogged] = useState(false);
   const [isUser, setIsUser] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [isHotel, setIsHotel] = useState(false);
+  const [isMart, setIsMart] = useState(false);
   const [allUsers, setAllUsers] = useState([]);
 
   // card state
@@ -29,10 +31,16 @@ function useAuth(token) {
         setIsLogged(true);
         if (res.data.user.role === "superadmin") {
           setIsAdmin(true);
-          getAllUsersData(token)
+          getAllUsersData(token);
         }
         if (res.data.user.role === "user") {
           setIsUser(true);
+        }
+        if (res.data.user.role === "hotel") {
+          setIsHotel(true);
+        }
+        if (res.data.user.role === "supermarket") {
+          setIsMart(true);
         }
       };
       getData();
@@ -77,10 +85,9 @@ function useAuth(token) {
     );
   };
 
-
   const getAllUsersData = async (token) => {
     const res = await axios.get(`/api/v1/auth/allUsers`, {
-      headers: {Authorization : token}
+      headers: { Authorization: token },
     });
     setAllUsers(res.data.user);
   };
@@ -90,6 +97,8 @@ function useAuth(token) {
     isLogged: [isLogged, setIsLogged],
     isUser: [isUser, setIsUser],
     isAdmin: [isAdmin, setIsAdmin],
+    isHotel: [isHotel, setIsHotel],
+    isMart: [isMart, setIsMart],
     cart: [cart, setCart],
     order: [order, setOrder],
     finalTotal: [finalTotal, setFinalTotal],

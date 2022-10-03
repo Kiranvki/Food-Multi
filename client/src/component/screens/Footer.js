@@ -32,7 +32,7 @@ function Footer() {
       <Container sx={{ paddingTop: 6 }}>
         <FooterHeader sx={{ display: "flex", justifyContent: "space-between" }}>
           <FooterHeaderText color={"#fff"} variant="h4" fontWeight={500}>
-            PizzaWorld
+            Coolway
           </FooterHeaderText>
           <FooterFlag>
             <Button
