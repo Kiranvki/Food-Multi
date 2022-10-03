@@ -21,6 +21,7 @@ const authController = {
       });
 
       console.log("dhina");
+      console.log("kiran");
 
       // const user = await Auth(req.body)
       await newUser.save();
