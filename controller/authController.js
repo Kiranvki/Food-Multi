@@ -20,6 +20,8 @@ const authController = {
         password: passHash,
       });
 
+      console.log("dhina");
+
       // const user = await Auth(req.body)
       await newUser.save();
 
