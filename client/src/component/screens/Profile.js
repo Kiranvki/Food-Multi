@@ -19,6 +19,7 @@ import EditIcon from "@mui/icons-material/Edit";
 function Profile() {
   const data = useContext(GlobalContext);
   const [user] = data.authApi.userData;
+  const [isAdmin] = data.authApi.isAdmin;
   const [isUser] = data.authApi.isUser;
   const [allUsers] = data.authApi.allUsers;
   const [orders, setOrders] = useState([]);
@@ -47,7 +48,7 @@ function Profile() {
 
   return (
     <Box sx={{ paddingTop: "80px", display: "flex" }}>
-      {isUser ? null : <SideDrawer />}
+      {isAdmin ? <SideDrawer /> : null}
       <Box component="main" sx={{ flexGrow: 1, p: { xs: 0.5, lg: 3, sm: 3 } }}>
         {isUser ? (
           <Typography variant="h4" align="center" sx={{ paddingTop: 3 }}>
@@ -63,9 +64,9 @@ function Profile() {
         )}
         <Grid container spacing={3} sx={{ mt: 2 }}>
           <Grid item lg={4} xs={12}>
-            {isUser ? (
+            {isAdmin ? (
               <Box
-                sx={{ height: 350, display: "flex", justifyContent: "center" }}
+                sx={{ height: 300, display: "flex", justifyContent: "center" }}
               >
                 {user.image ? (
                   <img src={user.image.url} alt={user.name} height="100%" />
@@ -75,7 +76,7 @@ function Profile() {
               </Box>
             ) : (
               <Box
-                sx={{ height: 300, display: "flex", justifyContent: "center" }}
+                sx={{ height: 350, display: "flex", justifyContent: "center" }}
               >
                 {user.image ? (
                   <img src={user.image.url} alt={user.name} height="100%" />
