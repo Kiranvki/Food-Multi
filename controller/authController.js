@@ -58,7 +58,7 @@ const authController = {
       res.cookie("refreshToken", refreshToken, {
         httpOnly: true,
         signed: true,
-        path: `/api/v1/auth/refreshToken`,
+        // path: `/api/v1/auth/refreshToken`, its restricted to allow all the routes expect this path
         maxAge: 1 * 24 * 60 * 60 * 1000,
       });
 
