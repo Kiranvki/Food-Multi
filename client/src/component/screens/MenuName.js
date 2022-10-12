@@ -46,7 +46,6 @@ function MenuName(props) {
   //   filterResult("All");
   // }, [products]);
 
-
   const delHandler = async (id) => {
     if (window.confirm(`Are you sure to delete product?`)) {
       try {
@@ -106,6 +105,8 @@ function MenuName(props) {
       >
         Our Products
       </Typography>
+
+
       {/* <Grid container sx={{ mt: 2 }}>
         <Grid item xs={12} sm={8} md={6} lg={12}>
           <Box sx={{ display: "flex", justifyContent: "center" }}>

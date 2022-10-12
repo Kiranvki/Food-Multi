@@ -11,10 +11,13 @@ const getRolePrice = async(req) =>{
       {
           const data = await Auth.findById({ _id: user.id }).select( "-password" );
           calculatePrice = data.role === 'hotel' ? 0.95 : data.role ==='supermarket' ? 0.9 : 1 ;
+
+
       }
     });
     return calculatePrice;
 }
+
 const ProductCtrl = {
   getAllProducts: async (req, res) => {
     try {
@@ -22,9 +25,12 @@ const ProductCtrl = {
       let data = await Product.find();
       data = data.map(e=>({price:parseInt(e.price * calculatePrice ), _id:e._id.toString(), title:e.title, category:e.category, qnty:e.qnty, desc:e.desc, image:e.image, stock:e.stock, sold:e.sold, freeShipping:e.freeShipping, rating:e.rating}))
       const features = new ProductFeature(Product.find(), req.query)
+
       .filtering().sorting().paginating()
+      console.log("price",data);
+
       const feature = await features.query
-      
+
       res.json({
         products: feature,data,
         result: data.length,

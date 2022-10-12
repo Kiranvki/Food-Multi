@@ -13,8 +13,8 @@ import {
 import React, { useContext, useEffect, useState } from "react";
 import "../../style/CssStyle/index.css";
 import { NavLink } from "react-router-dom";
-import SwipeableViews from "react-swipeable-views";
-import { autoPlay } from "react-swipeable-views-utils";
+// import SwipeableViews from "react-swipeable-views";
+import Carousel from "react-material-ui-carousel"
 import {
   HeaderBox,
   HeaderContent,
@@ -62,7 +62,9 @@ const service = [
   },
 ];
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+// const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+
+
 
 const images = [
   {
@@ -113,7 +115,7 @@ function Home() {
         <Box sx={{ paddingTop: "80px" }}>
           <Grid container>
             <Grid item md={12} lg={12} sm={12}>
-              <AutoPlaySwipeableViews
+            <Carousel
                 axis={theme.direction === "rtl" ? "x-reverse" : "x"}
                 index={activeStep}
                 onChangeIndex={handleStepChange}
@@ -137,7 +139,7 @@ function Home() {
                     ) : null}
                   </div>
                 ))}
-              </AutoPlaySwipeableViews>
+              </Carousel>
             </Grid>
           </Grid>
           <Box>
@@ -263,31 +265,25 @@ function Home() {
         <Box sx={{ paddingTop: "80px" }}>
           <Grid container>
             <Grid item md={12} lg={12} sm={12}>
-              <AutoPlaySwipeableViews
-                axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-                index={activeStep}
-                onChangeIndex={handleStepChange}
-                enableMouseEvents
+              <Carousel
               >
-                {images.map((step, index) => (
-                  <div key={step.label}>
-                    {Math.abs(activeStep - index) <= 2 ? (
-                      <Box
-                        component="img"
-                        sx={{
-                          height: { xs: "180px", sm: "100%" },
-                          display: "block",
-                          width: "100%",
-                          overflow: "hidden",
-                          width: "100%",
-                        }}
-                        src={step.imgPath}
-                        alt={step.label}
-                      />
-                    ) : null}
+                {images.map((item, index) => (
+                  <div key={index}>
+                    <Box
+                      component="img"
+                      sx={{
+                        height: { xs: "180px", sm: "100%" },
+                        display: "block",
+                        width: "100%",
+                        overflow: "hidden",
+                        width: "100%",
+                      }}
+                      src={item}
+                      alt={`${index} Slide`}
+                    />
                   </div>
                 ))}
-              </AutoPlaySwipeableViews>
+              </Carousel>
             </Grid>
           </Grid>
           <Box>
@@ -413,7 +409,7 @@ function Home() {
         <Box sx={{ paddingTop: "80px" }}>
           <Grid container>
             <Grid item md={12} lg={12} sm={12}>
-              <AutoPlaySwipeableViews
+            <Carousel
                 axis={theme.direction === "rtl" ? "x-reverse" : "x"}
                 index={activeStep}
                 onChangeIndex={handleStepChange}
@@ -437,7 +433,7 @@ function Home() {
                     ) : null}
                   </div>
                 ))}
-              </AutoPlaySwipeableViews>
+              </Carousel>
             </Grid>
           </Grid>
           <Box>

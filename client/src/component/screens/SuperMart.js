@@ -16,11 +16,13 @@ import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
-import SwipeableViews from "react-swipeable-views";
-import { autoPlay } from "react-swipeable-views-utils";
+// import SwipeableViews from "react-swipeable-views";
+import Carousel from "react-material-ui-carousel"
+
+
 import { useTheme } from "@mui/material/styles";
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+// const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
   {
@@ -36,6 +38,8 @@ const images = [
       "https://res.cloudinary.com/dkz3uzlnp/image/upload/v1664621086/food-multi/Generic1-Header-Banner2-1500X375_05cae457-24a1-4ff5-a73b-da34258b08dd_q7q21a.webp",
   },
 ];
+
+console.log(images)
 
 function SuperMarket() {
   const theme = useTheme();
@@ -60,31 +64,32 @@ function SuperMarket() {
         <Toolbar sx={{ mt: 2 }} />
         <Grid container>
           <Grid item md={12} lg={12} sm={12}>
-            <AutoPlaySwipeableViews
-              axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-              index={activeStep}
-              onChangeIndex={handleStepChange}
-              enableMouseEvents
-            >
-              {images.map((step, index) => (
-                <div key={step.label}>
-                  {Math.abs(activeStep - index) <= 2 ? (
-                    <Box
-                      component="img"
-                      sx={{
-                        height: "100%",
-                        display: "block",
-                        width: "100%",
-                        overflow: "hidden",
-                        width: "100%",
-                      }}
-                      src={step.imgPath}
-                      alt={step.label}
-                    />
-                  ) : null}
-                </div>
-              ))}
-            </AutoPlaySwipeableViews>
+              <Carousel
+                axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+                index={activeStep}
+                onChangeIndex={handleStepChange}
+                enableMouseEvents
+              >
+                {images.map((step, index) => (
+                  <div key={step.label}>
+                    {Math.abs(activeStep - index) <= 2 ? (
+                      <Box
+                        component="img"
+                        sx={{
+                          height: { xs: "180px", sm: "100%" },
+                          display: "block",
+                          width: "100%",
+                          overflow: "hidden",
+                          width: "100%",
+                        }}
+                        src={step.imgPath}
+                        alt={step.label}
+                      />
+                    ) : null}
+                  </div>
+                ))}
+              </Carousel>
+              
           </Grid>
         </Grid>
       </Box>
