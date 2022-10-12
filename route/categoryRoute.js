@@ -3,7 +3,7 @@ const CategoryCtrl = require('../controller/categoryCtrl');
 const auth = require('../middleware/auth');
 const adminAuth = require('../middleware/AdminAuth');
 
-route.get(`/getAll`, auth, CategoryCtrl.getAll);
+route.get(`/getAll`, CategoryCtrl.getAll);
 route.get(`/get/:id`, auth, adminAuth, CategoryCtrl.getSingle);
 
 route.post(`/create`, auth, adminAuth, CategoryCtrl.create);

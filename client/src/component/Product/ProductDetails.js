@@ -18,6 +18,9 @@ import StarIcon from "@mui/icons-material/Star";
 function ProductDetails() {
   const data = useContext(GlobalContext);
   const [isAdmin] = data.authApi.isAdmin;
+  const [isHotel]=data.authApi.isHotel;
+  const [isMart]=data.authApi.isMart;
+
 
   const params = useParams();
   const [product, setProduct] = useState("");
@@ -91,11 +94,11 @@ function ProductDetails() {
                 </Typography>
 
                 <Typography variant="h6" sx={{ paddingLeft: 0.5 }}>
-                  {product.qnty}
+                  {product.qnty} {isHotel ? "X 10kg":isMart ? "X 50Kg":"Kg"}
                 </Typography>
               </Box>
               <Box sx={{ mt: 2 }}>
-                <Typography variant="h5">Dish</Typography>
+                <Typography variant="h5">Description</Typography>
                 <Typography>{product.desc}</Typography>
               </Box>
             </CardContent>

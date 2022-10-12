@@ -21,7 +21,7 @@ const imageCtrl = {
       }
 
       // validate image type
-      if(file.mimetype !== 'image/jpeg' && file.mimetype !== 'image/png') {
+      if(file.mimetype !== 'image/jpeg' && file.mimetype !== 'image/png' && file.mimetype !== 'image/webp') {
         removeTemp(file.tempFilePath)
         return res.status(400).json({msg: "Only allow jpg/png format"});
       }
@@ -69,15 +69,15 @@ const imageCtrl = {
       const file = req.files.profileImg;
 
       // validate file size
-      if (file.size > 1 * 1024 * 1024) {
+      if (file.size > 3 * 1024 * 1024) {
         removeTemp(file.tempFilePath)
         return res.status(400).json({msg: "File size must be less than 5MB"})
       }
 
       // validate image type
-      if(file.mimetype !== 'image/jpeg' && file.mimetype !== 'image/png') {
+      if(file.mimetype !== 'image/jpeg' && file.mimetype !== 'image/png' && file.mimetype !== 'image/webp') {
         removeTemp(file.tempFilePath)
-        return res.status(400).json({msg: "Only allow jpg/png format"});
+        return res.status(400).json({msg: "Only allow jpg/png/Webp format"});
       }
 
       // upload

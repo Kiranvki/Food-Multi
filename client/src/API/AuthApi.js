@@ -55,7 +55,10 @@ function useAuth(token) {
 
     if (check) {
       toast.success("product added to cart");
-      setCart([...cart, { ...product, quantity: 1 }]);
+      // setCart([...cart, { ...product, quantity: 1 }]);
+      {
+        isUser ?  (setCart([...cart, { ...product, quantity: 1 }])) : isHotel ?  (setCart([...cart, { ...product, quantity: 10 }])): isMart ?  (setCart([...cart, { ...product, quantity: 50 }])) :  (setCart([...cart, { ...product, quantity: 1 }]))
+      }
 
       // store cart info  in db
       await axios.patch(

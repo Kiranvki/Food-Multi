@@ -44,7 +44,7 @@ function About() {
           mt={1}
           sx={{ fontWeight: "600" }}
         >
-          Welcome to ChoolWay
+          Welcome to CoolWay
         </Typography>
         <Container>
           <Grid container mt={3}>
@@ -380,7 +380,7 @@ function About() {
                 </Box>
               </div>
               <Typography component="div" variant="h5" textAlign="left" py={1}>
-                Vinoth
+                Vinod
               </Typography>
 
               <Box component="div">

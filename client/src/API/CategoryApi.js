@@ -3,22 +3,22 @@ import axios from "axios";
 
 function CategoryApi(token) {
   const [category, setCategory] = useState([]);
+  const [callback,setCallback]=useState(false);
 
   useEffect(() => {
-    if (token) {
+    
       // read products
       const getCategory = async () => {
-        const res = await axios.get(`/api/v1/category/getAll`, {
-          headers: { Authorization: token },
-        });
+        const res = await axios.get(`/api/v1/category/getAll`);
         setCategory(res.data.categories);
       };
       getCategory()
-    }
-  }, [token]);
+    
+  }, [setCallback]);
 
   return {
     categories: [category, setCategory],
+    callback:[callback,setCallback]
   };
 }
 
