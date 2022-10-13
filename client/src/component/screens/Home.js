@@ -113,7 +113,7 @@ function Home() {
     <>
       {isLogged ? null : (
         <Box sx={{ paddingTop: "80px" }}>
-          <Grid container>
+          <Grid container sx={{display: 'block'}}>
             <Grid item md={12} lg={12} sm={12}>
             <Carousel
                 axis={theme.direction === "rtl" ? "x-reverse" : "x"}
@@ -122,16 +122,15 @@ function Home() {
                 enableMouseEvents
               >
                 {images.map((step, index) => (
-                  <div key={step.label}>
+                  <div key={index}>
                     {Math.abs(activeStep - index) <= 2 ? (
                       <Box
                         component="img"
+                        key={index}
                         sx={{
                           height: { xs: "180px", sm: "100%" },
-                          display: "block",
-                          width: "100%",
                           overflow: "hidden",
-                          width: "100%",
+                          width: "100vw",
                         }}
                         src={step.imgPath}
                         alt={step.label}
@@ -263,7 +262,7 @@ function Home() {
       )}
       {isUser ? (
         <Box sx={{ paddingTop: "80px" }}>
-          <Grid container>
+          <Grid container  sx={{display: 'block'}}>
             <Grid item md={12} lg={12} sm={12}>
               <Carousel
               >
@@ -271,6 +270,7 @@ function Home() {
                   <div key={index}>
                     <Box
                       component="img"
+                      key={index}
                       sx={{
                         height: { xs: "180px", sm: "100%" },
                         display: "block",
@@ -407,7 +407,7 @@ function Home() {
       ) : null}
       {isAdmin ? (
         <Box sx={{ paddingTop: "80px" }}>
-          <Grid container>
+          <Grid container sx={{display: 'block'}}>
             <Grid item md={12} lg={12} sm={12}>
             <Carousel
                 axis={theme.direction === "rtl" ? "x-reverse" : "x"}
@@ -416,10 +416,11 @@ function Home() {
                 enableMouseEvents
               >
                 {images.map((step, index) => (
-                  <div key={step.label}>
+                  <div key={index.label}>
                     {Math.abs(activeStep - index) <= 2 ? (
                       <Box
                         component="img"
+                        key={index}
                         sx={{
                           height: { xs: "180px", sm: "100%" },
                           display: "block",

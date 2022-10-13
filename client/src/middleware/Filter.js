@@ -20,7 +20,7 @@ function Filter() {
         <Grid container sx={{ mt: 4 }}>
             <Grid item sm={4} xs={10} sx={{ position: 'relative', display: { xs: "block", sm: "none" } }}>
                 <SearchIcon sx={{ position: "absolute", top: "22%", left: '2%' }} />
-                <input type="text" value={search} placeholder="Enter your search!"
+                <input type="text" value={search} placeholder="Search here!"
                     onChange={e => setSearch(e.target.value.toLowerCase())} style={{ padding: '10px 10px 10px 35px', borderRadius: '20px', width: '100%' }} />
             </Grid>
 
@@ -73,7 +73,7 @@ function Filter() {
 
             <Grid item sm={4} sx={{ position: 'relative', display: { xs: "none", sm: "block" } }}>
                 <SearchIcon sx={{ position: "absolute", top: "22%", left: '2%' }} />
-                <input type="text" value={search} placeholder="Enter your search!"
+                <input type="text" value={search} placeholder="Search here!"
                     onChange={e => setSearch(e.target.value.toLowerCase())} style={{ padding: '10px 10px 10px 35px', borderRadius: '20px', width: '100%' }} />
             </Grid>
 

@@ -38,7 +38,7 @@ function SideDrawer() {
         <Box>
           <Box sx={{ display: "flex", justifyContent: "center" }}>
             <img
-              src="https://res.cloudinary.com/dhina/image/upload/v1662388585/ProjectImage/13-pizza-lineal_dy3pj6.gif"
+              src="https://res.cloudinary.com/dhina/image/upload/v1664773762/waycool/526-paper-bag-vegetables-flat_rcghbe.gif"
               alt=""
               height={45}
             />

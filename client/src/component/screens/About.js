@@ -200,7 +200,7 @@ function About() {
               <div className="cover">
                 <img
                   src={
-                    "https://res.cloudinary.com/dkz3uzlnp/image/upload/v1660627975/food-bang/order_knycmh.jpg"
+                    "https://res.cloudinary.com/dkz3uzlnp/image/upload/v1665645428/food-multi/sreenivas_ilbgrs.jpg"
                   }
                   alt=""
                   width="100%"
@@ -216,9 +216,47 @@ function About() {
                 </Box>
               </div>
               <Typography component="div" variant="h5" textAlign="left" py={1}>
-                Srinivas
+                Sreenivas
               </Typography>
 
+              <Box component="div">
+                <Link href="/" sx={{ color: "#f4474a" }}>
+                  <i
+                    className="fa-brands fa-twitter"
+                    style={{ fontSize: "20px", margin: "5px 25px 0px 0px" }}
+                    href="/"
+                  ></i>
+                </Link>
+                <Link href="/" sx={{ color: "#f4474a" }}>
+                  <i
+                    className="fa-brands fa-linkedin-in"
+                    style={{ fontSize: "20px", margin: "5px 5px 0px 0px" }}
+                  ></i>
+                </Link>
+              </Box>
+            </Grid>
+            <Grid item xs={12} sm={6} md={3} lg={3} mb={8} mt={1}>
+              <div className="cover">
+                <img
+                  src={
+                    "https://res.cloudinary.com/dkz3uzlnp/image/upload/v1665648364/food-multi/shivu_emzffd.png"
+                  }
+                  alt=""
+                  width="100%"
+                  height="100%"
+                />
+                <Box component="div" className="effect">
+                  <Typography className="effect2">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Praesentium alias omnis officia, dolore reprehenderit
+                    laboriosam, dolorem fugit, quis adipisci rem dolor. Ratione
+                    consequatur itaque incidunt atque.
+                  </Typography>
+                </Box>
+              </div>
+              <Typography component="div" variant="h5" textAlign="left" py={1}>
+                ShivaKumar
+              </Typography>
               <Box component="div">
                 <Link href="/" sx={{ color: "#f4474a" }}>
                   <i
@@ -239,7 +277,7 @@ function About() {
               <div className="cover">
                 <img
                   src={
-                    "https://res.cloudinary.com/dkz3uzlnp/image/upload/v1660627975/food-bang/order_knycmh.jpg"
+                    "https://res.cloudinary.com/dkz3uzlnp/image/upload/v1665645688/food-multi/sid_g9d8to.jpg"
                   }
                   alt=""
                   width="100%"
@@ -274,19 +312,11 @@ function About() {
                 </Link>
               </Box>
             </Grid>
-          </Grid>
-
-          <Grid
-            container
-            sx={{ padding: "5px 30px 5px 30px" }}
-            spacing={3}
-            mt={3}
-          >
             <Grid item xs={12} sm={6} md={3} lg={3} mb={8} mt={1}>
               <Box className="cover" component="div">
                 <img
                   src={
-                    "https://res.cloudinary.com/dkz3uzlnp/image/upload/v1660627975/food-bang/order_knycmh.jpg"
+                    "https://res.cloudinary.com/dkz3uzlnp/image/upload/v1665645607/food-multi/praveen_u2nn62.jpg"
                   }
                   alt=""
                   width="100%"
@@ -325,7 +355,7 @@ function About() {
               <div className="cover">
                 <img
                   src={
-                    "https://res.cloudinary.com/dkz3uzlnp/image/upload/v1660627975/food-bang/order_knycmh.jpg"
+                    "https://res.cloudinary.com/dkz3uzlnp/image/upload/v1665645429/food-multi/akshay_yg3qme.jpg"
                   }
                   alt=""
                   width="100%"
@@ -364,7 +394,7 @@ function About() {
               <div className="cover">
                 <img
                   src={
-                    "https://res.cloudinary.com/dkz3uzlnp/image/upload/v1660627975/food-bang/order_knycmh.jpg"
+                    "https://res.cloudinary.com/dkz3uzlnp/image/upload/v1665645429/food-multi/vinod_e58u2m.jpg"
                   }
                   alt=""
                   width="100%"
@@ -403,7 +433,7 @@ function About() {
               <div className="cover">
                 <img
                   src={
-                    "https://res.cloudinary.com/dkz3uzlnp/image/upload/v1660627975/food-bang/order_knycmh.jpg"
+                    "https://res.cloudinary.com/dkz3uzlnp/image/upload/v1665645429/food-multi/sachin_ntyvga.jpg"
                   }
                   alt=""
                   width="100%"
@@ -442,45 +472,7 @@ function About() {
               <div className="cover">
                 <img
                   src={
-                    "https://res.cloudinary.com/dkz3uzlnp/image/upload/v1660627975/food-bang/order_knycmh.jpg"
-                  }
-                  alt=""
-                  width="100%"
-                  height="100%"
-                />
-                <Box component="div" className="effect">
-                  <Typography className="effect2">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Praesentium alias omnis officia, dolore reprehenderit
-                    laboriosam, dolorem fugit, quis adipisci rem dolor. Ratione
-                    consequatur itaque incidunt atque.
-                  </Typography>
-                </Box>
-              </div>
-              <Typography component="div" variant="h5" textAlign="left" py={1}>
-                ShivuKumar
-              </Typography>
-              <Box component="div">
-                <Link href="/" sx={{ color: "#f4474a" }}>
-                  <i
-                    className="fa-brands fa-twitter"
-                    style={{ fontSize: "20px", margin: "5px 25px 0px 0px" }}
-                    href="/"
-                  ></i>
-                </Link>
-                <Link href="/" sx={{ color: "#f4474a" }}>
-                  <i
-                    className="fa-brands fa-linkedin-in"
-                    style={{ fontSize: "20px", margin: "5px 5px 0px 0px" }}
-                  ></i>
-                </Link>
-              </Box>
-            </Grid>
-            <Grid item xs={12} sm={6} md={3} lg={3} mb={8} mt={1}>
-              <div className="cover">
-                <img
-                  src={
-                    "https://res.cloudinary.com/dkz3uzlnp/image/upload/v1660627975/food-bang/order_knycmh.jpg"
+                    "https://res.cloudinary.com/dkz3uzlnp/image/upload/v1665648364/food-multi/sumanth_rgtoqu.jpg"
                   }
                   alt=""
                   width="100%"
@@ -518,7 +510,7 @@ function About() {
               <div className="cover">
                 <img
                   src={
-                    "https://res.cloudinary.com/dkz3uzlnp/image/upload/v1660627975/food-bang/order_knycmh.jpg"
+                    "https://res.cloudinary.com/dkz3uzlnp/image/upload/v1665645911/food-multi/rohit_farngc.jpg"
                   }
                   alt=""
                   width="100%"
@@ -556,7 +548,7 @@ function About() {
               <div className="cover">
                 <img
                   src={
-                    "https://res.cloudinary.com/dkz3uzlnp/image/upload/v1660627975/food-bang/order_knycmh.jpg"
+                    "https://res.cloudinary.com/dkz3uzlnp/image/upload/v1665645911/food-multi/akesh_ongkpl.jpg"
                   }
                   alt=""
                   width="100%"

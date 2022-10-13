@@ -62,7 +62,7 @@ function SuperMarket() {
     <Stack>
       <Box>
         <Toolbar sx={{ mt: 2 }} />
-        <Grid container>
+        <Grid container sx={{display: 'block'}}>
           <Grid item md={12} lg={12} sm={12}>
               <Carousel
                 axis={theme.direction === "rtl" ? "x-reverse" : "x"}
@@ -71,10 +71,11 @@ function SuperMarket() {
                 enableMouseEvents
               >
                 {images.map((step, index) => (
-                  <div key={step.label}>
+                  <div key={index.label}>
                     {Math.abs(activeStep - index) <= 2 ? (
                       <Box
                         component="img"
+                        key={index}
                         sx={{
                           height: { xs: "180px", sm: "100%" },
                           display: "block",
@@ -118,29 +119,37 @@ function SuperMarket() {
         </Typography>
         <Container>
           <Box mt={5}>
-            <Grid container>
-              <Grid item md={3} lg={3} sm={12} xs={12}>
+            <Grid container spacing={3}>
+              <Grid item md={3} lg={3} sm={3} xs={12}>
                 <img
                   src="https://res.cloudinary.com/dkz3uzlnp/image/upload/v1664641596/food-multi/Ur_favourites_Yippie_a8e6f065-9d8c-4927-9fc4-cf6e1ff2706b_fftvqu.avif"
                   alt=""
+                  height={"100%"}
+                  width={"100%"}
                 />
               </Grid>
-              <Grid item md={3} lg={3} sm={12} xs={12}>
+              <Grid item md={3} lg={3} sm={3} xs={12}>
                 <img
                   src="https://res.cloudinary.com/dkz3uzlnp/image/upload/v1664641594/food-multi/Goodness_of_Protein_568cbd82-4b32-4f47-bfd4-e00fbf172471_pvbfcy.avif"
                   alt=""
+                  height={"100%"}
+                  width={"100%"}
                 />
               </Grid>
-              <Grid item md={3} lg={3} sm={12} xs={12}>
+              <Grid item md={3} lg={3} sm={3} xs={12}>
                 <img
                   src="https://res.cloudinary.com/dkz3uzlnp/image/upload/v1664641989/food-multi/New-On-ITCStore-Bingo_263b66fd-ab45-4a17-bcac-8578323eae81_j4auwb.avif"
                   alt=""
+                  height={"100%"}
+                  width={"100%"}
                 />
               </Grid>
-              <Grid item md={3} lg={3} sm={12} xs={12}>
+              <Grid item md={3} lg={3} sm={3} xs={12}>
                 <img
                   src="https://res.cloudinary.com/dkz3uzlnp/image/upload/v1664642051/food-multi/Nutrients_that_support_Immunity_b20b8772-f28e-456a-809a-cabf41156b78_d7q4nn.avif"
                   alt=""
+                  height={"100%"}
+                  width={"100%"}
                 />
               </Grid>
             </Grid>
@@ -176,32 +185,42 @@ function SuperMarket() {
               <img
                 src="https://res.cloudinary.com/dkz3uzlnp/image/upload/v1664642345/food-multi/hp_organic-fruits-fnvStorefront_m_250922_560x378_01_vpvhfm.webp"
                 alt=""
+                height={"100%"}
+                width={"100%"}
               />
             </Grid>
             <Grid item md={6} lg={6} sm={12} xs={12}>
               <Grid container>
-                <Grid item md={6} lg={6} sm={12} xs={12}>
+                <Grid item md={6} lg={6} sm={6} xs={12}>
                   <img
                     src="https://res.cloudinary.com/dkz3uzlnp/image/upload/v1664642345/food-multi/hp_fresh-fruits-fnvStorefront_m_250922_275x184_02_jxwupa.webp"
                     alt=""
+                    height={"100%"}
+                    width={"100%"}
                   />
                 </Grid>
-                <Grid item md={6} lg={6} sm={12} xs={12}>
+                <Grid item md={6} lg={6}  sm={6} xs={12}>
                   <img
                     src="https://res.cloudinary.com/dkz3uzlnp/image/upload/v1664642345/food-multi/hp_fresh-veggs-fnvStorefront_m_250922_275x184_03_haf2x3.webp"
                     alt=""
+                    height={"100%"}
+                    width={"100%"}
                   />
                 </Grid>
-                <Grid item md={6} lg={6} sm={12} xs={12}>
+                <Grid item md={6} lg={6} sm={6}  xs={12}>
                   <img
                     src="https://res.cloudinary.com/dkz3uzlnp/image/upload/v1664642377/food-multi/hp_exotic-fruits-fnvStorefront_m_250922_275x184_05_jtcegz.webp"
                     alt=""
+                    height={"100%"}
+                    width={"100%"}
                   />
                 </Grid>
-                <Grid item md={6} lg={6} sm={12} xs={12}>
+                <Grid item md={6} lg={6} sm={6} xs={12}>
                   <img
                     src="https://res.cloudinary.com/dkz3uzlnp/image/upload/v1664642377/food-multi/hp_exotic-fruits-fnvStorefront_m_250922_275x184_05_jtcegz.webp"
                     alt=""
+                    height={"100%"}
+                    width={"100%"}
                   />
                 </Grid>
               </Grid>
