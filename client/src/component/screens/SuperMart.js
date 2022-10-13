@@ -39,7 +39,7 @@ const images = [
   },
 ];
 
-console.log(images)
+
 
 function SuperMarket() {
   const theme = useTheme();

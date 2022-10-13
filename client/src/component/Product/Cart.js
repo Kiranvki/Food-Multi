@@ -23,10 +23,6 @@ function Cart() {
   const [token] = data.token;
   const [finalTotal, setFinalTotal] = data.authApi.finalTotal;
   const [order, setOrder] = data.authApi.order;
-  const [isHotel]=data.authApi.isHotel;
-  const [isMart]=data.authApi.isMart;
-  const [isUser]=data.authApi.isUser;
-
 
   const [total, setTotal] = useState(0); // total price
   const [gst, setGst] = useState(5); // gst -> cgst & sgst
@@ -49,13 +45,19 @@ function Cart() {
   // inc count of items
   const incCount = (id) => {
     cart.forEach((item) => {
-      if (item._id === id && data.user.role==="user") {
+      if (item._id === id) {
         item.quantity += 1;
-      }else if (item._id === id && data.user.role==="hotel"){
-        item.quantity += 5;
-      }else if (item._id === id && data.user.role==="supermarket"){
-        item.quantity += 10;
       }
+
+      // {
+      //   isUser
+      //     ? (item.quantity += 1)
+      //     : isHotel
+      //     ? (item.quantity += 10)
+      //     : isMart
+      //     ? (item.quantity += 50)
+      //     : (item.quantity += 1);
+      // }
     });
     setCart([...cart]);
     updateCart(cart);
@@ -69,8 +71,24 @@ function Cart() {
     cart.forEach((item) => {
       if (item._id === id) {
         item.quantity === 1 ? (item.quantity = 1) : (item.quantity -= 1);
+        // {
+        //   isUser
+        //     ? item.quantity === 1
+        //       ? (item.quantity = 1)
+        //       : (item.quantity -= 1)
+        //     : isHotel
+        //     ? item.quantity === 10
+        //       ? (item.quantity = 10)
+        //       : (item.quantity -= 1)
+        //     : isMart
+        //     ? item.quantity === 50
+        //       ? (item.quantity = 50)
+        //       : (item.quantity -= 1)
+        //     : item.quantity === 1
+        //     ? (item.quantity = 1)
+        //     : (item.quantity -= 1);
+        // }
       }
-      
     });
     setCart([...cart]);
     updateCart(cart);

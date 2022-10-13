@@ -27,7 +27,7 @@ const ProductCtrl = {
       const features = new ProductFeature(Product.find(), req.query)
 
       .filtering().sorting().paginating()
-      console.log("price",data);
+  
 
       const feature = await features.query
 

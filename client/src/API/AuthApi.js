@@ -24,7 +24,6 @@ function useAuth(token) {
         const res = await axios.get(`/api/v1/auth/userinfo`, {
           headers: { Authorization: token },
         });
-        console.log("token =", token);
         setUser(res.data.user);
         setCart(res.data.user.cart);
         setOrder(res.data.user.orders);
