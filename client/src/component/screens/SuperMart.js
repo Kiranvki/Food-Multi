@@ -62,20 +62,21 @@ function SuperMarket() {
     <Stack>
       <Box>
         <Toolbar sx={{ mt: 2 }} />
-        <Grid container sx={{display: 'block'}}>
+        <Grid container sx={{ display: 'block' }}>
           <Grid item md={12} lg={12} sm={12}>
-              <Carousel
-                axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-                index={activeStep}
-                onChangeIndex={handleStepChange}
-                enableMouseEvents
-              >
-                {images.map((step, index) => (
-                  <div key={index.label}>
+            <Carousel
+              axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+              index={activeStep}
+              onChangeIndex={handleStepChange}
+              enableMouseEvents
+            >
+              {images.map((step, index) => {
+                return (
+                  <div key={index}>
                     {Math.abs(activeStep - index) <= 2 ? (
                       <Box
-                        component="img"
                         key={index}
+                        component="img"
                         sx={{
                           height: { xs: "180px", sm: "100%" },
                           display: "block",
@@ -88,9 +89,10 @@ function SuperMarket() {
                       />
                     ) : null}
                   </div>
-                ))}
-              </Carousel>
-              
+                )
+              })}
+            </Carousel>
+
           </Grid>
         </Grid>
       </Box>
@@ -199,7 +201,7 @@ function SuperMarket() {
                     width={"100%"}
                   />
                 </Grid>
-                <Grid item md={6} lg={6}  sm={6} xs={12}>
+                <Grid item md={6} lg={6} sm={6} xs={12}>
                   <img
                     src="https://res.cloudinary.com/dkz3uzlnp/image/upload/v1664642345/food-multi/hp_fresh-veggs-fnvStorefront_m_250922_275x184_03_haf2x3.webp"
                     alt=""
@@ -207,7 +209,7 @@ function SuperMarket() {
                     width={"100%"}
                   />
                 </Grid>
-                <Grid item md={6} lg={6} sm={6}  xs={12}>
+                <Grid item md={6} lg={6} sm={6} xs={12}>
                   <img
                     src="https://res.cloudinary.com/dkz3uzlnp/image/upload/v1664642377/food-multi/hp_exotic-fruits-fnvStorefront_m_250922_275x184_05_jtcegz.webp"
                     alt=""

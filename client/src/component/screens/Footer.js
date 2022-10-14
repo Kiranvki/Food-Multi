@@ -156,7 +156,7 @@ function Footer() {
                   }}
                 >
                   <NavLink to={`/`} className="FooterLink">
-                    +91 9080352865
+                    +91 000000****
                   </NavLink>
                 </MenuItem>
                 <MenuItem
@@ -168,7 +168,7 @@ function Footer() {
                   }}
                 >
                   <NavLink to={`/`} className="FooterLink">
-                    pizzaworld@gmail.com
+                  bepractical51@gmail.com
                   </NavLink>
                 </MenuItem>
               </MenuList>

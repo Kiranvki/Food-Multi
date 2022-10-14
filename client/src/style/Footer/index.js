@@ -42,9 +42,10 @@ export const FooterMenuItem = styled(Box)(({ theme }) => ({
 
 export const FooterGrid = styled(Grid)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop : '20px'
+    // display: 'flex',
+    // justifyContent: 'center',
+    marginTop : '20px',
+    paddingLeft: "100px"
   },
 }));
 
@@ -58,7 +59,7 @@ export const FooterFlag = styled(Box)(({ theme }) => ({
 
 export const FooterMenuAlign = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
-    marginLeft: '-60px'
+    // marginLeft: '-60px'
   },
 }));
 

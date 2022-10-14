@@ -113,31 +113,33 @@ function Home() {
     <>
       {isLogged ? null : (
         <Box sx={{ paddingTop: "80px" }}>
-          <Grid container sx={{display: 'block'}}>
+          <Grid container sx={{ display: 'block' }}>
             <Grid item md={12} lg={12} sm={12}>
-            <Carousel
+              <Carousel
                 axis={theme.direction === "rtl" ? "x-reverse" : "x"}
                 index={activeStep}
                 onChangeIndex={handleStepChange}
                 enableMouseEvents
               >
-                {images.map((step, index) => (
-                  <div key={index}>
-                    {Math.abs(activeStep - index) <= 2 ? (
-                      <Box
-                        component="img"
-                        key={index}
-                        sx={{
-                          height: { xs: "180px", sm: "100%" },
-                          overflow: "hidden",
-                          width: "100vw",
-                        }}
-                        src={step.imgPath}
-                        alt={step.label}
-                      />
-                    ) : null}
-                  </div>
-                ))}
+                {images.map((step, index) => {
+                  return (
+                    <div key={index}>
+                      {Math.abs(activeStep - index) <= 2 ? (
+                        <Box
+                          component="img"
+                          key={index}
+                          sx={{
+                            height: { xs: "180px", sm: "100%" },
+                            overflow: "hidden",
+                            width: "100vw",
+                          }}
+                          src={step.imgPath}
+                          alt={step.label}
+                        />
+                      ) : null}
+                    </div>
+                  )
+                })}
               </Carousel>
             </Grid>
           </Grid>
@@ -262,27 +264,33 @@ function Home() {
       )}
       {isUser ? (
         <Box sx={{ paddingTop: "80px" }}>
-          <Grid container  sx={{display: 'block'}}>
+          <Grid container sx={{ display: 'block' }}>
             <Grid item md={12} lg={12} sm={12}>
               <Carousel
+                axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+                index={activeStep}
+                onChangeIndex={handleStepChange}
+                enableMouseEvents
               >
-                {images.map((item, index) => (
-                  <div key={index}>
-                    <Box
-                      component="img"
-                      key={index}
-                      sx={{
-                        height: { xs: "180px", sm: "100%" },
-                        display: "block",
-                        width: "100%",
-                        overflow: "hidden",
-                        width: "100%",
-                      }}
-                      src={item}
-                      alt={`${index} Slide`}
-                    />
-                  </div>
-                ))}
+                {images.map((step, index) => {
+                  return (
+                    <div key={index}>
+                      {Math.abs(activeStep - index) <= 2 ? (
+                        <Box
+                          component="img"
+                          key={index}
+                          sx={{
+                            height: { xs: "180px", sm: "100%" },
+                            overflow: "hidden",
+                            width: "100vw",
+                          }}
+                          src={step.imgPath}
+                          alt={step.label}
+                        />
+                      ) : null}
+                    </div>
+                  )
+                })}
               </Carousel>
             </Grid>
           </Grid>
@@ -407,33 +415,35 @@ function Home() {
       ) : null}
       {isAdmin ? (
         <Box sx={{ paddingTop: "80px" }}>
-          <Grid container sx={{display: 'block'}}>
+          <Grid container sx={{ display: 'block' }}>
             <Grid item md={12} lg={12} sm={12}>
-            <Carousel
+              <Carousel
                 axis={theme.direction === "rtl" ? "x-reverse" : "x"}
                 index={activeStep}
                 onChangeIndex={handleStepChange}
                 enableMouseEvents
               >
-                {images.map((step, index) => (
-                  <div key={index.label}>
-                    {Math.abs(activeStep - index) <= 2 ? (
-                      <Box
-                        component="img"
-                        key={index}
-                        sx={{
-                          height: { xs: "180px", sm: "100%" },
-                          display: "block",
-                          width: "100%",
-                          overflow: "hidden",
-                          width: "100%",
-                        }}
-                        src={step.imgPath}
-                        alt={step.label}
-                      />
-                    ) : null}
-                  </div>
-                ))}
+                {images.map((step, index) => {
+                  return (
+                    <div key={index}>
+                      {Math.abs(activeStep - index) <= 2 ? (
+                        <Box
+                          component="img"
+                          key={index}
+                          sx={{
+                            height: { xs: "180px", sm: "100%" },
+                            display: "block",
+                            width: "100%",
+                            overflow: "hidden",
+                            width: "100%",
+                          }}
+                          src={step.imgPath}
+                          alt={step.label}
+                        />
+                      ) : null}
+                    </div>
+                  )
+                })}
               </Carousel>
             </Grid>
           </Grid>
