@@ -6,6 +6,9 @@ const adminAuth = require('../middleware/AdminAuth')
 route.get(`/getAll`, ProductCtrl.getAllProducts)
 route.get(`/get/:id`, ProductCtrl.getSingleProduct)
 
+route.get(`/getProducts`, ProductCtrl.getProducts)
+
+
 route.post(`/create`,auth,adminAuth, ProductCtrl.createProduct)
 route.put(`/update/:id`,auth,adminAuth, ProductCtrl.updateProduct)
 

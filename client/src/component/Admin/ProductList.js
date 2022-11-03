@@ -11,6 +11,8 @@ import { NavLink } from "react-router-dom";
 import { GlobalContext } from "../../GlobalContext";
 import SideDrawer from "../Drawer/SideDrawer";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import Filter from "../../middleware/Filter";
+import Paginate from "../../middleware/Paginate";
 
 function ProductList() {
   const data = useContext(GlobalContext);
@@ -22,7 +24,7 @@ function ProductList() {
       <SideDrawer />
       <Box component="main" sx={{ flexGrow: 1, p: { xs: 1.5, lg: 3, sm: 3 } }}>
         <Typography variant="h4" sx={{ paddingTop: 3.5, paddingBottom: 0.9 }}>
-          Produts
+          Products
         </Typography>
         <Divider color="grey" />
         <Box sx={{ display: "flex", justifyContent: "center" }}>
@@ -39,6 +41,7 @@ function ProductList() {
             </Button>
           </NavLink>
         </Box>
+        <Filter/>
         <Grid container sx={{ padding: 1.5 }}>
           {products &&
             products.map((item, index) => {
@@ -101,6 +104,10 @@ function ProductList() {
               );
             })}
         </Grid>
+        <Grid item md={12} align={"center"} sx={{mt: 5}}>
+        <Paginate />
+        
+      </Grid>
       </Box>
     </Box>
   );

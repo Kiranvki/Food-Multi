@@ -125,16 +125,30 @@ function Login() {
                   Login
                 </Button>
               </Box>
-              <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 3 }}>
-                <Typography color={"#551A8B"}>New user?</Typography>
-                <NavLink
-                  to={`/register`}
-                  style={{ marginLeft: "10px" }}
-                  className="LoginLink"
-                >
-                  SignUp
-                </NavLink>
+
+              <Box sx={{ display: "flex", justifyContent: "space-between", mt: 3 }}>
+                <Box>
+                  <details>
+                    <summary>Testing Mails</summary>
+                    <p>admin@gmail.com-admin123</p>
+                    <p>hotel@gmail.com-hotel123</p>
+                    <p>supermarket@gmail.com-super123</p>
+                  </details>
+                </Box>
+                <Box sx={{ display: "flex", justifyContent: "space-between"}}>
+                  <Typography color={"#551A8B"}>New user?</Typography>
+                  <NavLink
+                    to={`/register`}
+                    style={{ marginLeft: "10px" }}
+                    className="LoginLink"
+                  >
+                    SignUp
+                  </NavLink>
+                </Box>
+
               </Box>
+
+
             </Card>
           </Grid>
         </Grid>

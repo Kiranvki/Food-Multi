@@ -230,7 +230,7 @@ function CreateProduct() {
                   value={product.desc}
                   onChange={readValue}
                   required
-                  label="Dish"
+                  label="Description"
                   sx={{ marginTop: 2 }}
                 />
                 <TextField

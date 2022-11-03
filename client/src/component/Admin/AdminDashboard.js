@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useLayoutEffect, useState } from "react";
 import { GlobalContext } from "../../GlobalContext";
 import {
   Typography,
@@ -17,7 +17,8 @@ import axios from "axios";
 
 function AdminDashboard() {
   const data = useContext(GlobalContext);
-  const [products] = data.productApi.products;
+  // const [products] = data.productApi.products;
+  const [products,setProducts] = useState([])
   const [allUsers] = data.authApi.allUsers;
 
   const [token] = data.token;
@@ -32,6 +33,20 @@ function AdminDashboard() {
     };
     getOrders();
   }, []);
+
+  const getProducts = async () => {
+    let res = await axios.get(`/api/v1/product/getProducts`, {
+      headers: {
+          Authorization: token
+      }
+    })
+    setProducts(res.data.products)
+}
+
+
+  useLayoutEffect(() => {
+      getProducts()
+  },[])
 
   return (
     <Box sx={{ paddingTop: "80px", display: "flex" }}>

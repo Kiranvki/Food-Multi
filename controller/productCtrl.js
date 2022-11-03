@@ -11,8 +11,6 @@ const getRolePrice = async(req) =>{
       {
           const data = await Auth.findById({ _id: user.id }).select( "-password" );
           calculatePrice = data.role === 'hotel' ? 0.95 : data.role ==='supermarket' ? 0.9 : 1 ;
-
-
       }
     });
     return calculatePrice;
@@ -81,6 +79,14 @@ const ProductCtrl = {
       return res.status(500).json({ msg: err.message });
     }
   },
+  getProducts: async (req,res) => {
+      try {
+          const products = await Product.find({})
+        res.json({ products })
+      }catch(err) {
+        return res.status(500).json({ msg: err.message });
+      }
+  }
 };
 
 module.exports = ProductCtrl;

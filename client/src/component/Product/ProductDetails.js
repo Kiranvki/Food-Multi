@@ -94,7 +94,7 @@ function ProductDetails() {
                 </Typography>
 
                 <Typography variant="h6" sx={{ paddingLeft: 0.5 }}>
-                  {product.qnty} {isHotel ? "X 10kg":isMart ? "X 50Kg":"Kg"}
+                  {product.qnty} {isHotel ? "X 10kg/Pcs":isMart ? "X 50Kg":"Kg/Pcs"}
                 </Typography>
               </Box>
               <Box sx={{ mt: 2 }}>
@@ -102,7 +102,7 @@ function ProductDetails() {
                 <Typography>{product.desc}</Typography>
               </Box>
             </CardContent>
-            <CardActions sx={{ display: "felx", justifyContent: "center" }}>
+            <CardActions sx={{ display: "flex", justifyContent: "center" }}>
               {isAdmin ? null : (
                 <Grid item lg={8}>
                   <Button
