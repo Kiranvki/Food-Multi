@@ -94,7 +94,7 @@ function ProductDetails() {
                 </Typography>
 
                 <Typography variant="h6" sx={{ paddingLeft: 0.5 }}>
-                  {product.qnty} {isHotel ? "X 10kg/Pcs":isMart ? "X 50Kg":"Kg/Pcs"}
+                  {product.qnty} {isHotel ? "X 10kg/Pcs":isMart ? "X 50Kg/Pcs":"Kg/Pcs"}
                 </Typography>
               </Box>
               <Box sx={{ mt: 2 }}>
